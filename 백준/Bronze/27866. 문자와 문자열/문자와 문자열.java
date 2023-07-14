@@ -9,6 +9,6 @@ public class Main {
         String word = bufferedReader.readLine();
         int n = Integer.parseInt(bufferedReader.readLine());
 
-        System.out.print(word.substring(n-1,n));
+        System.out.print(word.charAt(n-1));
     }
 }
