@@ -9,7 +9,7 @@ public class Main {
 
         int n = Integer.parseInt(bufferedReader.readLine());
         int max = 0;
-        int sum = 0;
+        float sum = 0;
 
         StringTokenizer st = new StringTokenizer(bufferedReader.readLine());
 
@@ -21,6 +21,6 @@ public class Main {
             }
         }
 
-        System.out.print((float) sum/n/max*100);
+        System.out.print(sum/n/max*100);
     }
 }
