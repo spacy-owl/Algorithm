@@ -11,13 +11,12 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         for (int i=0; i<str.length(); i++) {
-            int n = str.charAt(i);
-            if (n < 91) {
-                n += 32;
+            char w = str.charAt(i);
+            if (Character.isUpperCase(w)) {
+                sb.append(Character.toLowerCase(w));
             } else {
-                n -= 32;
+                sb.append(Character.toUpperCase(w));
             }
-            sb.append((char)n);
         }
         System.out.print(sb);
     }
