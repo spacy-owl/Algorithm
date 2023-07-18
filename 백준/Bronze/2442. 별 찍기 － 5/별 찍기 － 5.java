@@ -13,12 +13,11 @@ public class Main {
         bufferedReader.close();
 
         for (int i=0; i<n; i++) {
-            for (int j=0; j<n+i; j++) {
-                if (n-1-i > j) {
-                    bufferedWriter.write(" ");
-                } else {
-                    bufferedWriter.write("*");
-                }
+            for (int j = 0; j < n - i - 1; j++) {
+                bufferedWriter.write(" ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                bufferedWriter.write("*");
             }
             bufferedWriter.newLine();
         }
