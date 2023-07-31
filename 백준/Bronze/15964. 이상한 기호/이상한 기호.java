@@ -13,6 +13,6 @@ public class Main {
         int A = Integer.parseInt(st.nextToken());
         int B = Integer.parseInt(st.nextToken());
 
-        System.out.print((A+B)*(A-B));
+        System.out.print((long) (A+B)*(A-B));
     }
 }
