@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 
 public class Main {
@@ -10,18 +9,19 @@ public class Main {
 
         int N = Integer.parseInt(bufferedReader.readLine());
 
-        int[] result = new int[N];
+        int[] countArray = new int[10001]; // 입력값 범위 (0 ~ 10000)
 
-        for (int i=0; i<N; i++) {
-            result[i] = Integer.parseInt(bufferedReader.readLine());
+        for (int i = 0; i < N; i++) {
+            int num = Integer.parseInt(bufferedReader.readLine());
+            countArray[num]++;
         }
-
-        Arrays.sort(result);
 
         StringBuilder sb = new StringBuilder();
 
-        for (int i=0; i<N; i++) {
-            sb.append(result[i]).append("\n");
+        for (int i = 1; i <= 10000; i++) {
+            for (int j = 0; j < countArray[i]; j++) {
+                sb.append(i).append("\n");
+            }
         }
         System.out.println(sb);
     }
