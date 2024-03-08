@@ -4,6 +4,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
+    static int[][] temp;
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -12,15 +14,19 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
 
-        int result = facto(N)/(facto(K)*facto(N-K));
-        System.out.print(result);
-    }
+        temp = new int[N + 1][K + 1];
 
-    static int facto(int n) {
-        if (n <= 1) {
-            return 1;
-        } else {
-            return facto(n-1) * n;
+        System.out.print(Calculate(N,K));
+    }
+    static int Calculate(int n, int k) {
+        if (temp[n][k] > 0) {
+            return temp[n][k];
         }
+
+        if (k == 0 || n == k) {
+            return temp[n][k] = 1;
+        }
+
+        return temp[n][k] = Calculate(n - 1, k - 1) + Calculate(n - 1, k);
     }
 }
